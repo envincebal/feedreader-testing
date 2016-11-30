@@ -98,7 +98,7 @@ $(function() {
       loadFeed(0, function(){
         done();
       });
-     });
+    });
 
     it("feed has at least one entry", function(){
       var entry = $(".entry").length;
