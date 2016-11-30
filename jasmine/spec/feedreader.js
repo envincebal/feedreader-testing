@@ -9,14 +9,9 @@
  * to ensure they don't run until the DOM is ready.
  */
 
-$(function() {
+$(function(){
 
-  /* This is our first test suite - a test suite just contains
-  * a related set of tests. This suite is all about the RSS
-  * feeds definitions, the allFeeds variable in our application.
-  */
-
-  describe('RSS Feeds', function() {
+  describe('RSS Feeds', function(){
 
     /* This is our first test - it tests to make sure that the
      * allFeeds variable has been defined and that it is not
@@ -26,7 +21,7 @@ $(function() {
      * pag
      */
 
-    it('are defined', function() {
+    it('are defined', function(){
       expect(allFeeds).toBeDefined();
       expect(allFeeds.length).not.toBe(0);
     });
@@ -54,6 +49,7 @@ $(function() {
         expect(allFeeds[x].url.length).not.toBe(0);
       }
     });
+
   });
 
   describe("The Menu", function(){
@@ -83,6 +79,7 @@ $(function() {
       $(".menu-icon-link").click();
       expect($("body").hasClass("menu-hidden")).toEqual(true);
     }); 
+
   });
 
   describe("Initial Entries", function(){
@@ -95,15 +92,14 @@ $(function() {
      */
 
     beforeEach(function(done){
-      loadFeed(0, function(){
-        done();
-      });
+      loadFeed(0, done);
     });
 
     it("feed has at least one entry", function(){
       var entry = $(".entry").length;
       expect(entry).toBeTruthy();
     });
+
   });
 
   describe("New Feed Selection", function(){
@@ -118,18 +114,14 @@ $(function() {
     var secondLoad;
    
     beforeEach(function(done){
-      loadFeed(1, function(){
-        firstLoad = $(".feed").text();
-        done();
-      });
+      firstLoad = $(".feed").text();
+      loadFeed(1, done);
     });
 
     it("content changes when feed loads", function(done){
-      loadFeed(2, function(){
-        secondLoad = $(".feed").text();       
-      });
+      secondLoad = $(".feed").text();  
       expect(firstLoad).not.toEqual(secondLoad);
-      done();
+      loadFeed(2, done);
     });
   });
    
