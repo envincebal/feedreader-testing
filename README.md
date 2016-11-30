@@ -2,6 +2,8 @@
 
 This project is a web-based application that reads RSS feeds. The purpose is to practice test driven development using the [Jasmine](http://jasmine.github.io/) framework. We are to write a serious of tests based on a series of instructions to ensure the listed functionality works. All tests were written in **feedreader.js**.
 
+Click <a href="https://envincebal.github.io/feedreader-testing/">HERE</a> to view app.
+
 ## Tests performed
 
 * Edit the allFeeds variable in ./js/app.js to make the provided test fail and see how Jasmine visualizes this failure in your application.
