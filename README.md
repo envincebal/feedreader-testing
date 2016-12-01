@@ -4,13 +4,13 @@ This project is a web-based application that reads RSS feeds. The purpose is to 
 
 Click <a href="https://envincebal.github.io/feedreader-testing/">HERE</a> to view app.
 
-## Tests performed
+## Steps for completing this project
 
-* Take the JavaScript Testing course
-* Download the required project assets.
+* Take the <a href="https://www.udacity.com/course/javascript-testing--ud549">JavaScript Testing</a> course
+* Download the <a href="https://github.com/udacity/frontend-nanodegree-feedreader">required project assets</a>.
 * Review the functionality of the application within your browser.
 * Explore the application's HTML (./index.html), CSS (./css/style.css) and JavaScript (./js/app.js) to gain an understanding of how it works.
-* Explore the Jasmine spec file in ./jasmine/spec/feedreader.js and review the Jasmine documentation.
+* Explore the Jasmine spec file in ./jasmine/spec/feedreader.js and review the <a href="https://jasmine.github.io/">Jasmine documentation</a>.
 * Edit the allFeeds variable in ./js/app.js to make the provided test fail and see how Jasmine visualizes this failure in your application.
 * Return the allFeeds variable to a passing state.
 * Write a test that loops through each feed in the allFeeds object and ensures it has a URL defined and that the URL is not empty.
