@@ -32,7 +32,7 @@ $(function(){
      */
 
     it("names are defined", function(){
-      for (var x in allFeeds){
+      for (var x = 0; x < allFeeds.length; x++){
         expect(allFeeds[x].name).toBeDefined();
         expect(allFeeds[x].name.length).not.toBe(0);
       }
@@ -44,7 +44,7 @@ $(function(){
      */
 
     it("URLs are defined", function(){
-      for (var x in allFeeds){
+      for (var x = 0; x < allFeeds.length; x++){
         expect(allFeeds[x].url).toBeDefined();
         expect(allFeeds[x].url.length).not.toBe(0);
       }
@@ -96,7 +96,7 @@ $(function(){
     });
 
     it("feed has at least one entry", function(){
-      var entry = $(".entry").length;
+      var entry = $(".feed .entry").length;
       expect(entry).toBeTruthy();
     });
 
@@ -113,16 +113,21 @@ $(function(){
     var firstLoad;
     var secondLoad;
    
-    beforeEach(function(done){
-      firstLoad = $(".feed").text();
-      loadFeed(1, done);
+    beforeAll(function(done){
+      loadFeed(1, function(){
+        firstLoad = $(".feed").text();
+        loadFeed(2, function(){
+          secondLoad = $(".feed").text();
+          done();
+        });
+      });
     });
 
     it("content changes when feed loads", function(done){
-      secondLoad = $(".feed").text();  
       expect(firstLoad).not.toEqual(secondLoad);
-      loadFeed(2, done);
+      done();
     });
   });
    
 }());
+
